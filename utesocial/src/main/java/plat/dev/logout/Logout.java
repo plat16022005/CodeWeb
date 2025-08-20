@@ -31,7 +31,7 @@ public class Logout extends HttpServlet {
 		PrintWriter out = resp.getWriter();
 		HttpSession session = request.getSession();
 		session.invalidate();
-		request.getRequestDispatcher("Login.html").include(request,
+		request.getRequestDispatcher("Loginsession.html").include(request,
 		resp);
 	}
 
@@ -44,3 +44,4 @@ public class Logout extends HttpServlet {
 	}
 
 }
+
