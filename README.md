@@ -14,4 +14,4 @@ Khi nhập Username và Password, tiến hành xét trong file LoginServletSessi
 
 ## 2. Bài tập tuần 2:
 Trong thư mục: CSDLKetNoi chọn src/main chọn webapp, nhấn chạy file Login.jsp. Sẽ hiện giao diện đăng nhập, tùy theo cài đặt tài khoản admin, manager.
-Khi đăng nhập sẽ chuyển sang LoginController từ đó chuyển sang WaitingController. Từ đây sẽ xem vai trò của 
+Khi đăng nhập sẽ chuyển sang LoginController từ đó chuyển sang WaitingController. Từ đây sẽ xem vai trò của của người dùng mà chuyển hướng sang các trang như admin -> /csdladmin, manager -> /csdlmanager.
