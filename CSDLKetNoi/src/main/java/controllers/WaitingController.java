@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import user.User;
 
 @SuppressWarnings("serial")
 @WebServlet(urlPatterns = "/waiting")
@@ -23,7 +24,7 @@ public class WaitingController extends HttpServlet {
 
 			// Dựa vào roleid để chuyển hướng
 			if (u.getRoleid() == 1) {
-				resp.sendRedirect(req.getContextPath() + "/csdladmin");
+				resp.sendRedirect(req.getContextPath() + "/views/AdminControl.jsp");
 			} else if (u.getRoleid() == 2) {
 				resp.sendRedirect(req.getContextPath() + "/csdlmanager");
 			} else {

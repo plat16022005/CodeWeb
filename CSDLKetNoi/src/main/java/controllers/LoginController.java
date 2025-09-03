@@ -7,6 +7,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import user.User;
+import user.UserService;
+import user.UserServiceImpl;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -47,7 +50,7 @@ public class LoginController extends HttpServlet {
 				}
 			}
 		}
-		req.getRequestDispatcher("Login.jsp").forward(req, resp);
+		req.getRequestDispatcher("/views/Login.jsp").forward(req, resp);
 	}
 
 	/**
@@ -71,7 +74,7 @@ public class LoginController extends HttpServlet {
 			alertMsg = "Tài khoản hoặc mật khẩu không được rỗng";
 			System.out.println(alertMsg);
 			req.setAttribute("alert", alertMsg);
-			req.getRequestDispatcher("Login.jsp").forward(req, resp);
+			req.getRequestDispatcher("/views/Login.jsp").forward(req, resp);
 			return;
 		}
 		UserService service = new UserServiceImpl();
@@ -85,8 +88,9 @@ public class LoginController extends HttpServlet {
 			resp.sendRedirect(req.getContextPath() + "/waiting");
 		} else {
 			alertMsg = "Tài khoản hoặc mật khẩu không đúng";
+			System.out.println(alertMsg);
 			req.setAttribute("alert", alertMsg);
-			req.getRequestDispatcher("Login.jsp").forward(req, resp);
+			req.getRequestDispatcher("/views/Login.jsp").forward(req, resp);
 		}
 	}
 

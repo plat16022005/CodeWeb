@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import plat.dev.DBConnectionMySQL;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -40,7 +42,7 @@ public class CSDLController1 extends HttpServlet {
 			out.println("Đã kết nối csdl");
 //			stmt.executeUpdate("INSERT INTO User(id, name, address) "
 //					+ "VALUES (4, 'Trung', 'HCM')");
-			ResultSet rs = stmt.executeQuery("SELECT id, email, fullname, phone FROM User");
+			ResultSet rs = stmt.executeQuery("SELECT id, email, fullname, phone FROM account");
 			while (rs.next()) {
 				out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4));
 			}
